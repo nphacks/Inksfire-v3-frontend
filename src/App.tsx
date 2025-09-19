@@ -1,0 +1,22 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing from "./Pages/Landing";
+import Screenplay from "./Pages/Screenplay";
+import Home from "./Pages/Home";
+import { Studio } from "./Pages/Studio";
+
+function App() {
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/screenplay/:screenplay_id?" element={<Screenplay />} />
+          <Route path="/studio" element={<Studio />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  )
+}
+
+export default App

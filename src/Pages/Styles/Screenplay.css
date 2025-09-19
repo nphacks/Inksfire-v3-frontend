@@ -1,0 +1,100 @@
+.screenplay-header {
+    height: 5vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.editor-container {
+    width: 100vw;
+}
+
+.screenplay-content-editor {
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screenplay-content-toolbar {
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.screenplay-editor-container {
+    display: block;
+    width: 1040px;
+}
+
+.editor-box {
+  border: 1px solid #ccc;
+  height: 85vh;
+  color:black;
+  font-size: 12pt;
+  padding: 10vh 10vh 14vh 10vh;
+  box-sizing: border-box;
+  background-color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.slugline-format {
+    font-weight: bolder;
+    margin-left: 12px;
+    text-transform: uppercase;
+}
+
+.action-format {
+    font-weight: 400;
+    margin-left: 12px;
+}
+
+.keyword-format {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.character-format {
+    font-weight: bolder;
+    margin-left: 36px;
+    text-transform: uppercase;
+}
+
+.parenthetical-format {
+    font-weight: 400;
+    margin-left: 40px;
+    text-transform: uppercase;
+}
+
+.dialogue-format {
+    font-weight: 400;
+    margin-left: 26px;
+}
+
+.transition-format {
+    font-weight: 400;
+    text-align: right;
+    margin-right: 12px;
+    text-transform: uppercase;
+}
+
+.montage-format {
+    font-weight: 400;
+    margin-left: 12px;
+    text-transform: uppercase;
+}
+
+.flashback-format {
+    font-weight: 400;
+    margin-left: 12px;
+    text-transform: uppercase;
+}
+
+.text_on_screen-format {
+    font-weight: 400;
+    margin-left: 12px;
+    text-transform: uppercase;
+}
