@@ -3,7 +3,7 @@ import Landing from "./Pages/Landing";
 import Screenplay from "./Pages/Screenplay";
 import Home from "./Pages/Home";
 import { Studio } from "./Pages/Studio";
-import { Studio } from "./Pages/Subpages/Screenplay/StoryNotes";
+import { StoryNotes } from "./Pages/Subpages/Screenplay/StoryNotes";
 
 function App() {
   return (
