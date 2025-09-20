@@ -4,6 +4,31 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+}
+
+.screenplay-title-display {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: text;
+  display:  inline-block;
+  margin-left: 18px;
+}
+
+.screenplay-title-input {
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-family: inherit;
+  cursor: text;
+}
+
+
+.screenplay-header-buttons button {
+    margin: 12px 0 12px 6px;
 }
 
 .editor-container {
@@ -13,14 +38,15 @@
 .screenplay-content-editor {
     height: 95vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 .screenplay-content-toolbar {
-    height: 5vh;
+    /* height: 5vh; */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -32,24 +58,26 @@
 
 .editor-box {
   border: 1px solid #ccc;
-  height: 85vh;
+  height: 90vh;
   color:black;
   font-size: 12pt;
   padding: 10vh 10vh 14vh 10vh;
+  margin-left: 12px;
   box-sizing: border-box;
+  overflow-y: auto;
   background-color: white;
   font-family: 'Courier New', Courier, monospace;
 }
 
 .slugline-format {
     font-weight: bolder;
-    margin-left: 12px;
+    margin-left: 112px;
     text-transform: uppercase;
 }
 
 .action-format {
     font-weight: 400;
-    margin-left: 12px;
+    margin-left: 112px;
 }
 
 .keyword-format {
@@ -59,19 +87,20 @@
 
 .character-format {
     font-weight: bolder;
-    margin-left: 36px;
+    margin-left: 336px;
     text-transform: uppercase;
 }
 
 .parenthetical-format {
     font-weight: 400;
-    margin-left: 40px;
+    margin-left: 320px;
     text-transform: uppercase;
 }
 
 .dialogue-format {
     font-weight: 400;
-    margin-left: 26px;
+    margin-left: 230px;
+    margin-bottom: 24px;
 }
 
 .transition-format {

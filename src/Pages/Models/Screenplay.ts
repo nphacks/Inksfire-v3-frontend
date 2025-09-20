@@ -1,3 +1,4 @@
+
 export const blockTypeMap: Record<string, string> = {
   slugline: "slugline-format",
   action: "action-format",
@@ -10,6 +11,7 @@ export const blockTypeMap: Record<string, string> = {
   flashback: "flashback-format",
   text_on_screen: "text_on_screen-format",
 };
+
 
 export let screenplay_test = [
     {
