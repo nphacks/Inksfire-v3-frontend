@@ -1,0 +1,246 @@
+.story-notes-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.story-notes-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.toolbar-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.toolbar-btn:hover {
+  background-color: #f8f9fa;
+  border-color: #007bff;
+}
+
+.toolbar-btn.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.toolbar-btn.add-note {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.toolbar-btn.add-note:hover {
+  background-color: #218838;
+}
+
+.toolbar-btn.save {
+  background-color: #17a2b8;
+  color: white;
+  border-color: #17a2b8;
+}
+
+.toolbar-btn.save:hover {
+  background-color: #138496;
+}
+
+.toolbar-btn.clear {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+.toolbar-btn.clear:hover {
+  background-color: #c82333;
+}
+
+.toolbar-info {
+  margin-left: auto;
+  font-size: 14px;
+  color: #666;
+}
+
+.relationship-hint {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ffeaa7;
+}
+
+.story-notes-board {
+  flex: 1;
+  position: relative;
+  background-color: #f8f9fa;
+  background-image: 
+    radial-gradient(circle, #ddd 1px, transparent 1px);
+  background-size: 20px 20px;
+  overflow: hidden;
+  cursor: default;
+}
+
+.relationships-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.relationship-delete {
+  pointer-events: all;
+}
+
+.sticky-note {
+  position: absolute;
+  width: 200px;
+  min-height: 100px;
+  background-color: #FFE066;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  cursor: move;
+  user-select: none;
+  z-index: 10;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  border: 2px solid transparent;
+}
+
+.sticky-note:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-note.dragging {
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.sticky-note.relationship-start {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.sticky-note-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px 8px;
+  height: 20px;
+}
+
+.delete-note {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.delete-note:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+.sticky-note-content {
+  padding: 8px 12px 12px;
+  height: calc(100% - 32px);
+  min-height: 68px;
+}
+
+.note-textarea {
+  width: 100%;
+  height: 100%;
+  min-height: 60px;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+  outline: none;
+}
+
+.note-text {
+  width: 100%;
+  height: 100%;
+  min-height: 60px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+  cursor: text;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.note-text:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .story-notes-toolbar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .toolbar-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .sticky-note {
+    width: 160px;
+    min-height: 80px;
+  }
+  
+  .note-textarea,
+  .note-text {
+    font-size: 12px;
+    min-height: 40px;
+  }
+}
+
+/* Animation for new notes */
+@keyframes noteAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.sticky-note {
+  animation: noteAppear 0.3s ease-out;
+}
