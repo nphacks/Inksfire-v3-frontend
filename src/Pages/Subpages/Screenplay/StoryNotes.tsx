@@ -98,7 +98,7 @@ export default function StoryNotes() {
     }
 
   const [notes, setNotes] = useState<StickyNote[]>(example_notes["notes"]);
-  const [relationships, setRelationships] = useState<Relationship[]>([]);
+  const [relationships, setRelationships] = useState<Relationship[]>(example_notes["relationships"]);
   const [draggedNote, setDraggedNote] = useState<string | null>(null);
   const [dragOffset, setDragOffset] = useState<Position>({ x: 0, y: 0 });
   const [isCreatingRelationship, setIsCreatingRelationship] = useState(false);
