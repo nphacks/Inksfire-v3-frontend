@@ -34,7 +34,70 @@ const COLORS = [
 ];
 
 export default function StoryNotes() {
-  const [notes, setNotes] = useState<StickyNote[]>([]);
+  let example_notes = {
+        "notes": [
+            {
+            "id": "7a46267b-bf06-4bab-af73-ee2074c12d4a",
+            "text": "James is happy ",
+            "position": {
+                "x": 21.322921752929688,
+                "y": 45.75695037841797
+            },
+            "color": "#99FF99"
+            },
+            {
+            "id": "db0b9eba-da99-437e-8c02-9026556bf92b",
+            "text": "James is not happyNew Note",
+            "position": {
+                "x": 35.30902862548828,
+                "y": 378.3958511352539
+            },
+            "color": "#FF9999"
+            },
+            {
+            "id": "cde16c61-3ae1-4f6b-a98e-ed2108a05ff6",
+            "text": "HappyNew Note",
+            "position": {
+                "x": 302.4028015136719,
+                "y": 193.4826431274414
+            },
+            "color": "#CC99FF"
+            },
+            {
+            "id": "318ab37d-810f-4be4-b1bb-145813471261",
+            "text": "New Note",
+            "position": {
+                "x": 292.0277862548828,
+                "y": 456.05558013916016
+            },
+            "color": "#FFE066"
+            }
+        ],
+        "relationships": [
+            {
+            "id": "30892b0e-fd5c-4cb4-a062-8f5d4c51fd6f",
+            "fromNoteId": "db0b9eba-da99-437e-8c02-9026556bf92b",
+            "toNoteId": "7a46267b-bf06-4bab-af73-ee2074c12d4a"
+            },
+            {
+            "id": "7969eb65-926d-4253-9278-7f546b9543ec",
+            "fromNoteId": "db0b9eba-da99-437e-8c02-9026556bf92b",
+            "toNoteId": "cde16c61-3ae1-4f6b-a98e-ed2108a05ff6"
+            },
+            {
+            "id": "6977b33d-0b16-4362-b10c-2e3c71be66d0",
+            "fromNoteId": "7a46267b-bf06-4bab-af73-ee2074c12d4a",
+            "toNoteId": "318ab37d-810f-4be4-b1bb-145813471261"
+            },
+            {
+            "id": "668eaa69-d115-4ffa-b8a7-ef0a72003a01",
+            "fromNoteId": "318ab37d-810f-4be4-b1bb-145813471261",
+            "toNoteId": "cde16c61-3ae1-4f6b-a98e-ed2108a05ff6"
+            }
+        ]
+    }
+
+  const [notes, setNotes] = useState<StickyNote[]>(example_notes["notes"]);
   const [relationships, setRelationships] = useState<Relationship[]>([]);
   const [draggedNote, setDraggedNote] = useState<string | null>(null);
   const [dragOffset, setDragOffset] = useState<Position>({ x: 0, y: 0 });
