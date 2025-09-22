@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { convertFromRaw, Editor, EditorState, RichUtils } from "draft-js";
 import "./Styles/Screenplay.css"
 import { useEffect, useRef, useState } from "react";
@@ -18,7 +18,7 @@ import { screenplayElementsToRaw } from "./Utils/screenplayElementsToRaw";
 import { parseEditorToScreenplay } from "./Utils/parseEditorToScreenplay";
 
 export default function Screenplay() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [screenplayElements, setScreenplayElements] = useState(screenplay_test)
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
@@ -55,6 +55,11 @@ export default function Screenplay() {
     console.log("Parsed screenplay:", updatedScreenplay);
   };
 
+  // Deployment hack
+  let hack = false
+  if(hack) {
+    setScreenplayElements([])
+  }
 
   return (
     <>
