@@ -69,7 +69,7 @@ export default function Landing() {
   ];
 
   return (
-    <div className="landing-page">
+    <div className="landing-page" style={{ width: '100%' }}>
       {/* Header */}
       <header className="landing-header">
         <div className="container">
