@@ -1,6 +1,11 @@
 import * as THREE from "three";
 
 export function renderMeshPropsInput(key: string, value: any, setProp: (newVal: any) => void) {
+    // Deployment hack
+    let hack = false
+    if(hack) {
+        console.log(key)
+    }
     if (value instanceof THREE.Vector3) {
         return (
             <div style={{ display: "flex", gap: "4px" }}>
