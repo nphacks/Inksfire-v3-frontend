@@ -12,6 +12,7 @@ import { GiConversation } from "react-icons/gi";
 import { TbTransitionRight, TbTextRecognition } from "react-icons/tb";
 import { LiaColumnsSolid } from "react-icons/lia";
 import { IoPlaySkipBackSharp } from "react-icons/io5";
+import { FiSettings } from "react-icons/fi";
 
 import { blockTypeMap, screenplay_test } from "./Models/Screenplay";
 import { screenplayElementsToRaw } from "./Utils/screenplayElementsToRaw";
@@ -24,6 +25,14 @@ export default function Screenplay() {
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [title, setTitle] = useState("Screenplay Title");
   const [titleEditing, setTitleEditing] = useState(false);
+  const [showSettingsPopup, setShowSettingsPopup] = useState(false);
+  
+  // Screenplay metadata state
+  const [screenplayTitle, setScreenplayTitle] = useState("");
+  const [writtenBy, setWrittenBy] = useState("");
+  const [basedOn, setBasedOn] = useState("");
+  const [contact, setContact] = useState("");
+  const [draftDate, setDraftDate] = useState("");
 
   const editorRef = useRef<Editor>(null);
 
@@ -60,6 +69,17 @@ export default function Screenplay() {
   if(hack) {
     setScreenplayElements([])
   }
+  const handleSettingsSave = () => {
+    console.log("Screenplay Settings:", {
+      title: screenplayTitle,
+      writtenBy,
+      basedOn,
+      contact,
+      draftDate
+    });
+    setShowSettingsPopup(false);
+  };
+
 
   return (
     <>
@@ -90,6 +110,9 @@ export default function Screenplay() {
               <button onClick={handleSave}>Save Draft</button>
               <button onClick={handleSave}>Submit Draft</button>
               <button onClick={handleSave}>Lock It</button>
+              <button onClick={() => setShowSettingsPopup(true)}>
+                <FiSettings />
+              </button>
             </div>
         </div>
         <div className="screenplay-content-editor">
@@ -138,6 +161,76 @@ export default function Screenplay() {
           </div>
           
         </div>
+        
+        {/* Settings Popup */}
+        {showSettingsPopup && (
+          <div className="settings-popup-overlay" onClick={() => setShowSettingsPopup(false)}>
+            <div className="settings-popup" onClick={(e) => e.stopPropagation()}>
+              <h3>Screenplay Settings</h3>
+              
+              <div className="settings-form">
+                <div className="form-group">
+                  <label>Title:</label>
+                  <input
+                    type="text"
+                    value={screenplayTitle}
+                    onChange={(e) => setScreenplayTitle(e.target.value)}
+                    placeholder="Enter screenplay title"
+                  />
+                  <button onClick={() => console.log("Title:", screenplayTitle)}>Save</button>
+                </div>
+                
+                <div className="form-group">
+                  <label>Written by:</label>
+                  <input
+                    type="text"
+                    value={writtenBy}
+                    onChange={(e) => setWrittenBy(e.target.value)}
+                    placeholder="Enter author name"
+                  />
+                  <button onClick={() => console.log("Written by:", writtenBy)}>Save</button>
+                </div>
+                
+                <div className="form-group">
+                  <label>Based on:</label>
+                  <input
+                    type="text"
+                    value={basedOn}
+                    onChange={(e) => setBasedOn(e.target.value)}
+                    placeholder="Enter source material"
+                  />
+                  <button onClick={() => console.log("Based on:", basedOn)}>Save</button>
+                </div>
+                
+                <div className="form-group">
+                  <label>Contact:</label>
+                  <input
+                    type="text"
+                    value={contact}
+                    onChange={(e) => setContact(e.target.value)}
+                    placeholder="Enter contact information"
+                  />
+                  <button onClick={() => console.log("Contact:", contact)}>Save</button>
+                </div>
+                
+                <div className="form-group">
+                  <label>Draft date:</label>
+                  <input
+                    type="date"
+                    value={draftDate}
+                    onChange={(e) => setDraftDate(e.target.value)}
+                  />
+                  <button onClick={() => console.log("Draft date:", draftDate)}>Save</button>
+                </div>
+                
+                <div className="popup-actions">
+                  <button onClick={() => setShowSettingsPopup(false)}>Cancel</button>
+                  <button onClick={handleSettingsSave} className="save-all-btn">Save All</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>  
     </>
   );
