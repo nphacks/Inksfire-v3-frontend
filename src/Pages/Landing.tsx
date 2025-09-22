@@ -64,7 +64,7 @@ export default function Landing() {
         <div className="container">
           <div className="header-content">
             <div className="logo">
-              <h1>ScreenCraft AI</h1>
+              <h1>Inksfire</h1>
             </div>
             <nav className="nav-links">
               <a href="#features">Features</a>
