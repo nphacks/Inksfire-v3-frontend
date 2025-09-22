@@ -107,7 +107,7 @@
 /* Hero Section */
 .hero-section {
   padding: 8rem 0 4rem;
-  background: linear-gradient(135deg, rgba(100, 108, 255, 0.1), rgba(83, 91, 242, 0.05));
+  background-color: #242424;
 }
 
 .hero-content {
@@ -200,7 +200,7 @@
 /* Features Section */
 .features-section {
   padding: 6rem 0;
-  background-color: rgba(248, 244, 255, 0.02);
+  background-color: #242424;
 }
 
 .features-grid {
@@ -244,6 +244,7 @@
 /* Pricing Section */
 .pricing-section {
   padding: 6rem 0;
+  background-color: #242424;
 }
 
 .pricing-grid {
@@ -346,7 +347,7 @@
 /* How It Works Section */
 .how-it-works-section {
   padding: 6rem 0;
-  background-color: rgba(248, 244, 255, 0.02);
+  background-color: #242424;
 }
 
 .steps-grid {
@@ -388,7 +389,7 @@
 /* CTA Section */
 .cta-section {
   padding: 6rem 0;
-  background: linear-gradient(135deg, rgba(100, 108, 255, 0.1), rgba(83, 91, 242, 0.05));
+  background-color: #242424;
 }
 
 .cta-content {
