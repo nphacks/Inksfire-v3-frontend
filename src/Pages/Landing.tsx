@@ -1,4 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import { 
+  FaRobot, 
+  FaVideo, 
+  FaFileAlt, 
+  FaBullseye, 
+  FaPalette, 
+  FaCloud,
+  FaSave,
+  FaFolder,
+  FaBuilding
+} from "react-icons/fa";
 import "./Styles/Landing.css";
 
 export default function Landing() {
@@ -100,9 +111,6 @@ export default function Landing() {
               >
                 Start Writing Now
               </button>
-              <button className="cta-button secondary large">
-                Watch Demo
-              </button>
             </div>
           </div>
           <div className="hero-visual">
@@ -126,32 +134,32 @@ export default function Landing() {
           <h2 className="section-title">Powerful Features for Modern Screenwriters</h2>
           <div className="features-grid">
             <div className="feature-card">
-              <div className="feature-icon">🤖</div>
+              <div className="feature-icon"><FaRobot /></div>
               <h3>AI Writing Assistant</h3>
               <p>Get intelligent suggestions for dialogue, character development, and story structure. Our AI understands screenplay format and helps maintain consistency.</p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">🎬</div>
+              <div className="feature-icon"><FaVideo /></div>
               <h3>3D Scene Visualization</h3>
               <p>Plan your scenes in immersive 3D environments. Visualize camera angles, blocking, and set design before you shoot.</p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">📝</div>
+              <div className="feature-icon"><FaFileAlt /></div>
               <h3>Professional Formatting</h3>
               <p>Industry-standard screenplay formatting with automatic scene numbering, character tracking, and export options.</p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">🎯</div>
+              <div className="feature-icon"><FaBullseye /></div>
               <h3>Story Structure Tools</h3>
               <p>Interactive story notes, character arcs, and plot development tools to keep your narrative on track.</p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">🎨</div>
+              <div className="feature-icon"><FaPalette /></div>
               <h3>Shot Planning</h3>
               <p>Create detailed shot lists with 3D previews. Plan camera movements, lighting, and composition.</p>
             </div>
             <div className="feature-card">
-              <div className="feature-icon">☁️</div>
+              <div className="feature-icon"><FaCloud /></div>
               <h3>Cloud Collaboration</h3>
               <p>Work with your team in real-time. Share scripts, get feedback, and manage revisions seamlessly.</p>
             </div>
@@ -248,7 +256,7 @@ export default function Landing() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-section">
-              <h3>ScreenCraft AI</h3>
+              <h3>Inksfire</h3>
               <p>The future of screenplay writing and visualization.</p>
             </div>
             <div className="footer-section">
@@ -277,7 +285,7 @@ export default function Landing() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2025 ScreenCraft AI. All rights reserved.</p>
+            <p>&copy; 2025 Inksfire. All rights reserved.</p>
           </div>
         </div>
       </footer>
